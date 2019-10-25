@@ -144,6 +144,7 @@ namespace VentaDeRepuestosv2
                 mantenimientoModelosVehiculos = new MantenimientoModelosVehiculos();
                 mantenimientoModelosVehiculos.MdiParent = this;
                 mantenimientoModelosVehiculos.FormClosed += new FormClosedEventHandler(cerrarModelosDeVehiculo);
+                mantenimientoModelosVehiculos.Show();
             }
             else
             {
@@ -163,6 +164,7 @@ namespace VentaDeRepuestosv2
                 clacesDeVehiculos = new MantenimientoClasesDeVehiculos();
                 clacesDeVehiculos.MdiParent = this;
                 clacesDeVehiculos.FormClosed += new FormClosedEventHandler(cerrarClasesDevehiculos);
+                clacesDeVehiculos.Show();
             }
             else
             {
@@ -202,6 +204,7 @@ namespace VentaDeRepuestosv2
                 partesDeVehiculos = new MantenimientoPartesDeVehiculos();
                 partesDeVehiculos.MdiParent = this;
                 partesDeVehiculos.FormClosed += new FormClosedEventHandler(cerrarPartesDeVehiculos);
+                partesDeVehiculos.Show();
             }
             else
             {
@@ -213,6 +216,13 @@ namespace VentaDeRepuestosv2
         private void cerrarPartesDeVehiculos(object sender, FormClosedEventArgs e)
         {
             partesDeVehiculos = null;
+        }
+
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 form = new Form1();
+            form.Show();
         }
     }
 }

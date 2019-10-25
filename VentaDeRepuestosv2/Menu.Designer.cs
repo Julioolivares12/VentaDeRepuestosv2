@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.puntoDeVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +37,9 @@
             this.clasesDeVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.partesDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,22 +48,13 @@
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.puntoDeVentaToolStripMenuItem,
-            this.mantenimientosToolStripMenuItem});
+            this.mantenimientosToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(843, 28);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip.Location = new System.Drawing.Point(0, 536);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(843, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
             // 
             // puntoDeVentaToolStripMenuItem
             // 
@@ -117,6 +109,23 @@
             this.partesDeVehiculosToolStripMenuItem.Text = "Partes de vehiculos";
             this.partesDeVehiculosToolStripMenuItem.Click += new System.EventHandler(this.PartesDeVehiculosToolStripMenuItem_Click);
             // 
+            // statusStrip
+            // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip.Location = new System.Drawing.Point(0, 536);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip.Size = new System.Drawing.Size(843, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.salirToolStripMenuItem.Text = "salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -126,7 +135,7 @@
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
             this.Text = "Menu";
             this.menuStrip.ResumeLayout(false);
@@ -148,6 +157,7 @@
         private System.Windows.Forms.ToolStripMenuItem clasesDeVehiculoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tiposDeVehiculosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem partesDeVehiculosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
 
