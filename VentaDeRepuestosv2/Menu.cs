@@ -22,6 +22,7 @@ namespace VentaDeRepuestosv2
 
 
 
+
         public Menu()
         {
             InitializeComponent();
