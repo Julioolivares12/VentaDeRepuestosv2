@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1E653BC-D9EE-4AD6-9256-5352BCA38694}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VentaDeRepuestosv2</RootNamespace>
+    <AssemblyName>VentaDeRepuestosv2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrador\ActualizarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\ActualizarUsuario.Designer.cs">
+      <DependentUpon>ActualizarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\CrearModeloDeVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\CrearModeloDeVehiculo.Designer.cs">
+      <DependentUpon>CrearModeloDeVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\CrearParteDeVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\CrearParteDeVehiculo.Designer.cs">
+      <DependentUpon>CrearParteDeVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\CrearTipoVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\CrearTipoVehiculo.Designer.cs">
+      <DependentUpon>CrearTipoVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\CrearUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\CrearUsuario.Designer.cs">
+      <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoClasesDeVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoClasesDeVehiculos.Designer.cs">
+      <DependentUpon>MantenimientoClasesDeVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoEmpleado.Designer.cs">
+      <DependentUpon>MantenimientoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoModelosVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoModelosVehiculos.Designer.cs">
+      <DependentUpon>MantenimientoModelosVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoPartesDeVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoPartesDeVehiculos.Designer.cs">
+      <DependentUpon>MantenimientoPartesDeVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoRepuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoRepuestos.Designer.cs">
+      <DependentUpon>MantenimientoRepuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoTiposVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoTiposVehiculos.Designer.cs">
+      <DependentUpon>MantenimientoTiposVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Consultas.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularioBase\CrearEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularioBase\CrearEmpleado.Designer.cs">
+      <DependentUpon>CrearEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularioBase\CrearModeloVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularioBase\CrearModeloVehiculo.Designer.cs">
+      <DependentUpon>CrearModeloVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularioBase\Mantenimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularioBase\Mantenimientos.Designer.cs">
+      <DependentUpon>Mantenimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Constantes.cs" />
+    <Compile Include="Helpers\Encriptar.cs" />
+    <Compile Include="Helpers\MostrarMensaje.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\BaseModel.cs" />
+    <Compile Include="Modelos\ClaseDeVehiculo.cs" />
+    <Compile Include="Modelos\ModeloVehiculo.cs" />
+    <Compile Include="Modelos\ParteVehiculo.cs" />
+    <Compile Include="Modelos\Persona.cs" />
+    <Compile Include="Modelos\Repuesto.cs" />
+    <Compile Include="Modelos\TipoVehiculo.cs" />
+    <Compile Include="Modelos\Usuario.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Administrador\ActualizarUsuario.resx">
+      <DependentUpon>ActualizarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\CrearModeloDeVehiculo.resx">
+      <DependentUpon>CrearModeloDeVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\CrearParteDeVehiculo.resx">
+      <DependentUpon>CrearParteDeVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\CrearTipoVehiculo.resx">
+      <DependentUpon>CrearTipoVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\CrearUsuario.resx">
+      <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\MantenimientoTiposVehiculos.resx">
+      <DependentUpon>MantenimientoTiposVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularioBase\CrearEmpleado.resx">
+      <DependentUpon>CrearEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularioBase\CrearModeloVehiculo.resx">
+      <DependentUpon>CrearModeloVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularioBase\Mantenimientos.resx">
+      <DependentUpon>Mantenimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vendedor\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
