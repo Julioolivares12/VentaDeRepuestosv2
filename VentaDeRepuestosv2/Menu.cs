@@ -27,6 +27,10 @@ namespace VentaDeRepuestosv2
         {
             InitializeComponent();
         }
+        public Menu(string perfil)
+        {
+            InitializeComponent();
+        }
 
         private void ShowNewForm(object sender, EventArgs e)
         {
