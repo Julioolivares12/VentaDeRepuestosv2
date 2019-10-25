@@ -14,5 +14,20 @@ namespace VentaDeRepuestosv2.Administrador
         {
             InitializeComponent();
         }
+
+        private void BtnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

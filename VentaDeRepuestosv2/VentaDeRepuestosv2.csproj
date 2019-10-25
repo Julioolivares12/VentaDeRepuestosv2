@@ -133,6 +133,12 @@
     <Compile Include="formularioBase\CrearModeloVehiculo.Designer.cs">
       <DependentUpon>CrearModeloVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularioBase\CrearRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularioBase\CrearRepuesto.Designer.cs">
+      <DependentUpon>CrearRepuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularioBase\Mantenimientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,12 @@
     <EmbeddedResource Include="Administrador\CrearUsuario.resx">
       <DependentUpon>CrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\MantenimientoPartesDeVehiculos.resx">
+      <DependentUpon>MantenimientoPartesDeVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\MantenimientoRepuestos.resx">
+      <DependentUpon>MantenimientoRepuestos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrador\MantenimientoTiposVehiculos.resx">
       <DependentUpon>MantenimientoTiposVehiculos.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularioBase\CrearModeloVehiculo.resx">
       <DependentUpon>CrearModeloVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularioBase\CrearRepuesto.resx">
+      <DependentUpon>CrearRepuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularioBase\Mantenimientos.resx">
       <DependentUpon>Mantenimientos.cs</DependentUpon>
