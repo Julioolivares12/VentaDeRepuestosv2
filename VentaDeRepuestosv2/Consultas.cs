@@ -438,7 +438,7 @@ namespace VentaDeRepuestosv2
             {
                 var query = "UPDATE MODELOSVEHICULOS SET DESCRIPCION WHERE ID_MODELOVEH=@ID_MODELOVEH";
 
-                var descripcionParameter = new SqlParameter("@ID_MODELOVEH", modelo.ID);
+                var descripcionParameter = new SqlParameter("@DESCRIPCION", modelo.ID);
                 var idParameter = new SqlParameter("@ID_MODELOVEH", modelo.ID);
                 var r = ExecuteNonQuery(con, query, CommandType.Text, descripcionParameter, idParameter);
 
