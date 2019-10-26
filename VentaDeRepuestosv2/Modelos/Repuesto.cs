@@ -18,6 +18,8 @@ namespace VentaDeRepuestosv2.Modelos
         public int NumMotor { get; set; }
         public int NumChasis { get; set; }
         public int NumVin { get; set; }
-        
+        public string UPC { get; set; }
+        public decimal Cantidad { get; set; }
+
     }
 }

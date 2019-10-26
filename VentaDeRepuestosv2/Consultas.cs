@@ -68,7 +68,7 @@ namespace VentaDeRepuestosv2
                 {
                     cmd.CommandType = commandType;
                     cmd.Parameters.AddRange(parameters);
-                    connection.Open();
+                  //  connection.Open();
                     return cmd.ExecuteNonQuery();
                 }
             }
@@ -944,5 +944,81 @@ namespace VentaDeRepuestosv2
             }
         }
         #endregion
+
+
+        public static bool InsertarCliente(Clientes cliente)
+        {
+            using (var con = Conexion.conectar())
+            {
+                using (var cmd = new SqlCommand("INSERT INTO CLIENTES (ID_CLIENTE,PRIMERNOMBRE,SEGUNDONOMBRE,PRIMERAPELLIDO,SEGUNDOAPELLIDO,FECHANAC,SEXO,ESTADO_CIVIL,LUGARTRABAJO) VALUES(@ID_CLIENTE,@PRIMERNOMBRE,@SEGUNDONOMBRE,@PRIMERAPELLIDO,@SEGUNDOAPELLIDO,@FECHANAC,@SEXO,@ESTADO_CIVIL,@LUGARTRABAJO) ", con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    SqlParameter[] sqlParameters =
+                    {
+                       new  SqlParameter("@ID_CLIENTE",cliente.ID),new SqlParameter("@PRIMERNOMBRE",cliente.PRIMERNOMBRE),new SqlParameter("@SEGUNDONOMBRE",cliente.SEGUNDONOMBRE)
+                       ,new SqlParameter("@PRIMERAPELLIDO",cliente.PRIMERAPELLIDO),new SqlParameter("@SEGUNDOAPELLIDO",cliente.SEGUNDOAPELLIDO)
+                       ,new SqlParameter("@FECHANAC",cliente.FECHANAC),new SqlParameter("@SEXO",cliente.SEXO)
+                       ,new SqlParameter("@ESTADO_CIVIL",cliente.ESTADO_CIVIL),new SqlParameter("@LUGARTRABAJO",cliente.LUGARTRABAJO)
+                    };
+                    cmd.Parameters.AddRange(sqlParameters);
+                    var r = cmd.ExecuteNonQuery();
+                    if (r > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
+        public static bool EliminarCliente(string id)
+        {
+            using (var con = Conexion.conectar())
+            {
+                using (var cmd = new SqlCommand("DELETE FROM CLIENTES WHERE ID_CLIENTE=@ID_CLIENTE ", con))
+                {
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.Add(new SqlParameter("@ID_CLIENTE", id));
+                    var r = cmd.ExecuteNonQuery();
+                    if (r > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
+        public static Clientes GetCliente(string id)
+        {
+            var p = new Clientes();
+            using (var con = Conexion.conectar())
+            {
+                using (var cmd = new SqlCommand("SELECT * FROM CLIENTES WHERE ID_CLIENTE=@ID_CLIENTE", con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@ID_CLIENTE", id);
+                    var reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            p.ID = reader["ID_CLIENTE"].ToString();
+                            p.PRIMERNOMBRE = reader["PRIMERNOMBRE"].ToString();
+                            p.SEGUNDONOMBRE = reader["SEGUNDONOMBRE"].ToString();
+                            p.PRIMERAPELLIDO = reader["PRIMERAPELLIDO"].ToString();
+                            p.SEGUNDOAPELLIDO = reader["SEGUNDOAPELLIDO"].ToString();
+                            p.FECHANAC = reader["FECHANAC"].ToString();
+                            p.SEXO = reader["SEXO"].ToString();
+                            p.ESTADO_CIVIL = reader["ESTADO_CIVIL"].ToString();
+                            p.LUGARTRABAJO = reader["LUGARTRABAJO"].ToString();
+                        }
+
+                    }
+                }
+            }
+            return p;
+        }
+
+
     }
 }
