@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using VentaDeRepuestosv2.Helpers;
 using VentaDeRepuestosv2.Modelos;
 
 namespace VentaDeRepuestosv2.Administrador
@@ -13,6 +14,8 @@ namespace VentaDeRepuestosv2.Administrador
     {
         public string Marca { get; set; }
         public string Parte { get; set; }
+
+        public string ID { get; set; }
         public ActualizarRepuesto()
         {
             InitializeComponent();
@@ -22,6 +25,7 @@ namespace VentaDeRepuestosv2.Administrador
             InitializeComponent();
             if(!String.IsNullOrEmpty(id) && !String.IsNullOrWhiteSpace(id))
             {
+                ID = id;
                 var mod = Consultas.GetRepuestoByID(id);
                 
                 txtDescripcion.Text = mod.Descripcion;
@@ -48,7 +52,20 @@ namespace VentaDeRepuestosv2.Administrador
         private void BtnCrear_Click(object sender, EventArgs e)
         {
             var mod =new Repuesto();
+            mod.Descripcion = txtDescripcion.Text;
+            mod.Descuento = Convert.ToDouble( txtDescuento.Text);
+            mod.ID = ID;
+            mod.ID_MARCAVEH = Marca;
+            mod.ID_PARTEVEH = Parte;
+            mod.Nombe = txtRepuesto.Text;
+            mod.NumChasis = Convert.ToInt32(txtNumChasis.Text);
+            mod.NumMotor = Convert.ToInt32(txtNumMotor.Text);
+            mod.NumVin = Convert.ToInt32(txtNumVIN.Text);
+            mod.PrecioCompra = Convert.ToDouble(txtPrecioCompra.Text);
+            mod.PrecioVenta = Convert.ToDouble(txtPrecioVenta.Text);
 
+            var rs = Consultas.InsertarRepuesto(mod);
+            MostrarMensaje.mostarMensaje(rs,Constantes.MENSAJEDEACTUALIZACION);
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
