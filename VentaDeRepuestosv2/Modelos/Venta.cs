@@ -15,7 +15,7 @@ namespace VentaDeRepuestosv2.Modelos
         public string NRODOC { get; set; }
         public string ID_TIPODOC { get; set; }
         public string NRO_CF { get; set; }
-        public string FECHA_VENTA { get; set; }
+        public DateTime FECHA_VENTA { get; set; }
         public double SUBTOTAL { get; set; }
         public double DESCUENTO { get; set; }
         public double IVA { get; set; }

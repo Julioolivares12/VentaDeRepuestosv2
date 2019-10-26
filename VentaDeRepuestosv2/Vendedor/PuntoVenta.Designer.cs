@@ -60,13 +60,6 @@
             this.txtDescuento = new System.Windows.Forms.TextBox();
             this.btnClienteNuevo = new System.Windows.Forms.Button();
             this.dgvItems = new System.Windows.Forms.DataGridView();
-            this.UPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO_UNITARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.REMOVER = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBuscarItem = new System.Windows.Forms.Button();
             this.txtItem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -84,6 +77,13 @@
             this.mETODOSTOMARTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.METODOSTOMARTableAdapter();
             this.mETODOSDARTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.METODOSDARTableAdapter();
             this.tIPODOCTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.TIPODOCTableAdapter();
+            this.UPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCUENTO1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO_UNITARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.REMOVER = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mETODOSDARBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repuestosDataSet)).BeginInit();
@@ -365,7 +365,7 @@
             this.UPC,
             this.DESCRIPCION,
             this.CANTIDAD,
-            this.DESCUENTO,
+            this.DESCUENTO1,
             this.PRECIO_UNITARIO,
             this.PRECIO_TOTAL,
             this.REMOVER});
@@ -374,63 +374,6 @@
             this.dgvItems.RowHeadersWidth = 51;
             this.dgvItems.Size = new System.Drawing.Size(880, 150);
             this.dgvItems.TabIndex = 53;
-            // 
-            // UPC
-            // 
-            this.UPC.Frozen = true;
-            this.UPC.HeaderText = "UPC";
-            this.UPC.MinimumWidth = 6;
-            this.UPC.Name = "UPC";
-            this.UPC.ReadOnly = true;
-            this.UPC.Width = 125;
-            // 
-            // DESCRIPCION
-            // 
-            this.DESCRIPCION.Frozen = true;
-            this.DESCRIPCION.HeaderText = "DESCRIPCION";
-            this.DESCRIPCION.MinimumWidth = 6;
-            this.DESCRIPCION.Name = "DESCRIPCION";
-            this.DESCRIPCION.ReadOnly = true;
-            this.DESCRIPCION.Width = 125;
-            // 
-            // CANTIDAD
-            // 
-            this.CANTIDAD.Frozen = true;
-            this.CANTIDAD.HeaderText = "CANTIDAD";
-            this.CANTIDAD.MinimumWidth = 6;
-            this.CANTIDAD.Name = "CANTIDAD";
-            this.CANTIDAD.Width = 125;
-            // 
-            // DESCUENTO
-            // 
-            this.DESCUENTO.Frozen = true;
-            this.DESCUENTO.HeaderText = "DESCUENTO";
-            this.DESCUENTO.MinimumWidth = 6;
-            this.DESCUENTO.Name = "DESCUENTO";
-            this.DESCUENTO.Width = 125;
-            // 
-            // PRECIO_UNITARIO
-            // 
-            this.PRECIO_UNITARIO.Frozen = true;
-            this.PRECIO_UNITARIO.HeaderText = "PRECIO UNITARIO";
-            this.PRECIO_UNITARIO.MinimumWidth = 6;
-            this.PRECIO_UNITARIO.Name = "PRECIO_UNITARIO";
-            this.PRECIO_UNITARIO.ReadOnly = true;
-            this.PRECIO_UNITARIO.Width = 125;
-            // 
-            // PRECIO_TOTAL
-            // 
-            this.PRECIO_TOTAL.HeaderText = "PRECIO TOTAL";
-            this.PRECIO_TOTAL.MinimumWidth = 6;
-            this.PRECIO_TOTAL.Name = "PRECIO_TOTAL";
-            this.PRECIO_TOTAL.Width = 125;
-            // 
-            // REMOVER
-            // 
-            this.REMOVER.HeaderText = "REMOVER";
-            this.REMOVER.MinimumWidth = 6;
-            this.REMOVER.Name = "REMOVER";
-            this.REMOVER.Width = 125;
             // 
             // btnBuscarItem
             // 
@@ -448,6 +391,7 @@
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(280, 20);
             this.txtItem.TabIndex = 49;
+            this.txtItem.TextChanged += new System.EventHandler(this.txtItem_TextChanged);
             this.txtItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItem_KeyDown);
             this.txtItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItem_KeyPress);
             this.txtItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtItem_KeyUp);
@@ -568,6 +512,59 @@
             // 
             this.tIPODOCTableAdapter.ClearBeforeFill = true;
             // 
+            // UPC
+            // 
+            this.UPC.Frozen = true;
+            this.UPC.HeaderText = "UPC";
+            this.UPC.MinimumWidth = 6;
+            this.UPC.Name = "UPC";
+            this.UPC.ReadOnly = true;
+            this.UPC.Width = 125;
+            // 
+            // DESCRIPCION
+            // 
+            this.DESCRIPCION.Frozen = true;
+            this.DESCRIPCION.HeaderText = "DESCRIPCION";
+            this.DESCRIPCION.MinimumWidth = 6;
+            this.DESCRIPCION.Name = "DESCRIPCION";
+            this.DESCRIPCION.ReadOnly = true;
+            this.DESCRIPCION.Width = 125;
+            // 
+            // CANTIDAD
+            // 
+            this.CANTIDAD.Frozen = true;
+            this.CANTIDAD.HeaderText = "CANTIDAD";
+            this.CANTIDAD.MinimumWidth = 6;
+            this.CANTIDAD.Name = "CANTIDAD";
+            this.CANTIDAD.Width = 125;
+            // 
+            // DESCUENTO1
+            // 
+            this.DESCUENTO1.HeaderText = "DESCUENTO";
+            this.DESCUENTO1.Name = "DESCUENTO1";
+            // 
+            // PRECIO_UNITARIO
+            // 
+            this.PRECIO_UNITARIO.HeaderText = "PRECIO UNITARIO";
+            this.PRECIO_UNITARIO.MinimumWidth = 6;
+            this.PRECIO_UNITARIO.Name = "PRECIO_UNITARIO";
+            this.PRECIO_UNITARIO.ReadOnly = true;
+            this.PRECIO_UNITARIO.Width = 125;
+            // 
+            // PRECIO_TOTAL
+            // 
+            this.PRECIO_TOTAL.HeaderText = "PRECIO TOTAL";
+            this.PRECIO_TOTAL.MinimumWidth = 6;
+            this.PRECIO_TOTAL.Name = "PRECIO_TOTAL";
+            this.PRECIO_TOTAL.Width = 125;
+            // 
+            // REMOVER
+            // 
+            this.REMOVER.HeaderText = "REMOVER";
+            this.REMOVER.MinimumWidth = 6;
+            this.REMOVER.Name = "REMOVER";
+            this.REMOVER.Width = 125;
+            // 
             // PuntoVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -655,13 +652,6 @@
         private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.Button btnClienteNuevo;
         private System.Windows.Forms.DataGridView dgvItems;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UPC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPCION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDAD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DESCUENTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO_UNITARIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO_TOTAL;
-        private System.Windows.Forms.DataGridViewButtonColumn REMOVER;
         private System.Windows.Forms.Button btnBuscarItem;
         private System.Windows.Forms.TextBox txtItem;
         private System.Windows.Forms.Label label5;
@@ -682,5 +672,12 @@
         private repuestosDataSetTableAdapters.METODOSDARTableAdapter mETODOSDARTableAdapter;
         private System.Windows.Forms.BindingSource tIPODOCBindingSource;
         private repuestosDataSetTableAdapters.TIPODOCTableAdapter tIPODOCTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UPC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDAD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCUENTO1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO_UNITARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO_TOTAL;
+        private System.Windows.Forms.DataGridViewButtonColumn REMOVER;
     }
 }

@@ -121,7 +121,7 @@ namespace VentaDeRepuestosv2
                        new  SqlParameter("@ID_DETALLEVENTA",detallessventas.ID_DETALLEVENTA),new SqlParameter("@ID_VENTA",detallessventas.ID_VENTA)
                        ,new SqlParameter("@ID_REPUESTO", detallessventas.ID_REPUESTO) ,new SqlParameter("@CANTIDAD", detallessventas.CANTIDAD)
                        ,new SqlParameter("@PRECIOUNITARIO", detallessventas.PRECIOUNITARIO) ,new SqlParameter("@SUBTOTALREPUESTO", detallessventas.SUBTOTALREPUESTO)
-                        ,new SqlParameter("@SUBTOTALREPUESTO", detallessventas.SUBTOTALREPUESTO) ,new SqlParameter("@DESCUENTO", detallessventas.DESCUENTO)
+                        ,new SqlParameter("@DESCUENTO", detallessventas.DESCUENTO)
                         ,new SqlParameter("@IVA", detallessventas.IVA) ,new SqlParameter("@TOTALREPUESTO", detallessventas.TOTALREPUESTO)
                     };
                     cmd.Parameters.AddRange(sqlParameters);

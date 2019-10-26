@@ -22,10 +22,12 @@ namespace VentaDeRepuestosv2.Vendedor
         Double consolidado = 0.00;
         Double tomar = 0.00;
         Double dar = 0.00;
+        Double descuento = 0.00;
         String id_venta;
         String tracking;
         String iduser = "56f0cf9c-e0d0-4390-96f9-b7cc76725809";
-        String idrepuesto = "1";
+        String idcliente = "aa84542e-b5c5-43e4-ae1a-3bc7dcc602af";
+        String idrepuesto = "aa84542e-b5c5-43e4-ae1a-3bc7dcc602af";
         String nrodoc;
         String idTipoDoc;
         String fechaventa;
@@ -121,7 +123,7 @@ namespace VentaDeRepuestosv2.Vendedor
                     fila.Cells[0].Value = "10000002555";
                     fila.Cells[1].Value = "Repuesto de Prueba";
                     fila.Cells[2].Value = "1";
-                    fila.Cells[3].Value = "";
+                    fila.Cells[3].Value = "0";
                     fila.Cells[4].Value = "50.00";
                     fila.Cells[5].Value = "50.00";
                     consolidado += 50;
@@ -173,7 +175,7 @@ namespace VentaDeRepuestosv2.Vendedor
                tomar = Convert.ToDouble(txtTomar.Text);
                consolidado -= tomar;
                 llenarTextos();
-                pagosYvueltos("Tomar", cmbMetodo1.Text, txtTomar.Text);
+                pagosYvueltos("TOMAR", cmbMetodo1.Text, txtTomar.Text);
                 
                 if(consolidado < 0.00)
                 {
@@ -218,7 +220,7 @@ namespace VentaDeRepuestosv2.Vendedor
                 dar = Convert.ToDouble(txtDar.Text);
                 consolidado += dar;
                 llenarTextos();
-                pagosYvueltos("Dar", cmbMetodo2.Text, txtDar.Text);
+                pagosYvueltos("DAR", cmbMetodo2.Text, txtDar.Text);
 
                 if (consolidado < 0.00)
                 {
@@ -255,9 +257,90 @@ namespace VentaDeRepuestosv2.Vendedor
             //cliente defaul
             //repuesto defaul
             nrodoc = txtTracking.Text;
-            idTipoDoc = cmbDocumento.ValueMember;
+            idTipoDoc = "1";
             tracking = txtTracking.Text;
             fechaventa = DateTime.Now.ToString("dd/MM/yyyy");
+            DateTime fecha2 = DateTime.Now;
+
+            var mod = new Venta();
+            mod.ID_VENTA = id_venta;
+            mod.ID_USUARIO = iduser;
+            mod.ID_CLIENTE = idcliente;
+            mod.ID_REPUESTOS = idrepuesto;
+            mod.NRODOC = tracking;
+            mod.NRO_CF = tracking;
+            mod.ID_TIPODOC = idTipoDoc;
+            mod.FECHA_VENTA = fecha2;
+            mod.SUBTOTAL = subTotal;
+            mod.DESCUENTO = descuento;
+            mod.IVA = iva;
+            mod.MONTOTOTAL = montoTotal;
+            Int32 contador = 0;
+            var r0 = Consultas2.InsertarVenta(mod);
+            if (r0)
+            {
+                MessageBox.Show("Venta realizada con exito Trackin number" + tracking);
+            }
+            else
+            {
+                MessageBox.Show("ocurrio un error");
+            }
+            /*
+            foreach (DataGridViewRow row in dgvPagos.Rows)
+            {
+                var mod3 = new Pagos();
+                mod3.ID_PAGO = id_venta + "_"+contador+tracking;
+                mod3.ID_VENTA = id_venta;
+                mod3.TIPO = dgvPagos.Rows[contador].Cells[0].Value.ToString();
+                mod3.METODO = dgvPagos.Rows[contador].Cells[1].Value.ToString();
+                mod3.VALOR = Convert.ToDouble(dgvPagos.Rows[contador].Cells[2].Value.ToString());
+                contador++;
+
+                var r = Consultas2.InsertarPago(mod3);
+                if (r)
+                {
+                    // MessageBox.Show("creado con exito");
+                }
+                else
+                {
+                    MessageBox.Show("ocurrio un error");
+                }
+
+            }
+
+            contador = 0;
+            foreach (DataGridViewRow row in dgvItems.Rows)
+            {
+                var mod2 = new DetalleVenta();
+                mod2.ID_DETALLEVENTA = id_venta + contador;
+                mod2.ID_VENTA = id_venta;
+                mod2.ID_REPUESTO = row.Cells[0].Value.ToString();
+                mod2.CANTIDAD = Convert.ToInt32(dgvItems.Rows[contador].Cells[2].Value.ToString());
+                mod2.PRECIOUNITARIO = Convert.ToDouble(dgvItems.Rows[contador].Cells[4].Value.ToString());
+                mod2.SUBTOTALREPUESTO = Convert.ToDouble(dgvItems.Rows[contador].Cells[5].Value.ToString());
+                mod2.DESCUENTO = Convert.ToDouble(dgvItems.Rows[contador].Cells[3].Value.ToString());
+                mod2.IVA = Convert.ToDouble(dgvItems.Rows[contador].Cells[5].Value.ToString()) /1.13;
+                mod2.TOTALREPUESTO = Convert.ToDouble(dgvItems.Rows[contador].Cells[5].Value.ToString());
+                contador++;
+                var r = Consultas2.InsertarDetalle(mod2);
+                if (r)
+                {
+                   // MessageBox.Show("creado con exito");
+                }
+                else
+                {
+                    MessageBox.Show("ocurrio un error");
+                }
+
+            }
+            */
+            
+            
+         
+        }
+
+        private void txtItem_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
