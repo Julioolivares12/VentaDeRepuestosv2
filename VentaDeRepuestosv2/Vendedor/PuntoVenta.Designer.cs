@@ -114,7 +114,7 @@
             // btnPagarImprimir
             // 
             this.btnPagarImprimir.Enabled = false;
-            this.btnPagarImprimir.Location = new System.Drawing.Point(538, 506);
+            this.btnPagarImprimir.Location = new System.Drawing.Point(539, 506);
             this.btnPagarImprimir.Name = "btnPagarImprimir";
             this.btnPagarImprimir.Size = new System.Drawing.Size(117, 23);
             this.btnPagarImprimir.TabIndex = 72;
@@ -129,10 +129,10 @@
             this.METODO,
             this.VALOR,
             this.QUITAR});
-            this.dgvPagos.Location = new System.Drawing.Point(38, 474);
+            this.dgvPagos.Location = new System.Drawing.Point(12, 474);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.RowHeadersWidth = 51;
-            this.dgvPagos.Size = new System.Drawing.Size(494, 98);
+            this.dgvPagos.Size = new System.Drawing.Size(520, 98);
             this.dgvPagos.TabIndex = 71;
             // 
             // TIPO

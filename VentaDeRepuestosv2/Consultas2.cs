@@ -17,7 +17,6 @@ namespace VentaDeRepuestosv2
             var mod = new Repuesto();
             using (var con = Conexion.conectar())
             {
-
                 using (var cmd = new SqlCommand("SELECT * FROM REPUESTOS WHERE UPC = @UPC", con))
                 {
                     cmd.CommandType = CommandType.Text;
