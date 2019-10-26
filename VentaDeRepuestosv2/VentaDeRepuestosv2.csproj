@@ -95,6 +95,12 @@
     <Compile Include="Administrador\MantenimientoClasesDeVehiculos.Designer.cs">
       <DependentUpon>MantenimientoClasesDeVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\MantenimientoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\MantenimientoClientes.Designer.cs">
+      <DependentUpon>MantenimientoClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrador\MantenimientoEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,7 @@
     </Compile>
     <Compile Include="Modelos\BaseModel.cs" />
     <Compile Include="Modelos\ClaseDeVehiculo.cs" />
+    <Compile Include="Modelos\Clientes.cs" />
     <Compile Include="Modelos\LoginModel.cs" />
     <Compile Include="Modelos\ModeloVehiculo.cs" />
     <Compile Include="Modelos\ParteVehiculo.cs" />
@@ -208,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\CrearUsuario.resx">
       <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\MantenimientoClientes.resx">
+      <DependentUpon>MantenimientoClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\MantenimientoPartesDeVehiculos.resx">
       <DependentUpon>MantenimientoPartesDeVehiculos.cs</DependentUpon>
