@@ -256,6 +256,30 @@ namespace VentaDeRepuestosv2
             }
         }
 
+        public static DataTable getMarcas()
+        {
+            using (var con = Conexion.conectar())
+            {
+                using (var adpter = new SqlDataAdapter("SELECT ID_MARCAVEH,DESCRIPCION FROM MARCASVEHICULOS",con))
+                {
+                    var dt = new DataTable();
+                    adpter.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+        public static DataTable getPartes()
+        {
+            using (var con = Conexion.conectar())
+            {
+                using (var adapter = new SqlDataAdapter("SELECT ID_PARTEVEH ,DESCRIPCION FROM PARTESVEHICULOS",con))
+                {
+                    var dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+        }
         public static DataTable getEmpleados()
         {
             using (var con = Conexion.conectar())

@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador\ActualizarRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\ActualizarRepuesto.Designer.cs">
+      <DependentUpon>ActualizarRepuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrador\ActualizarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     </Compile>
     <Compile Include="Administrador\CrearParteDeVehiculo.Designer.cs">
       <DependentUpon>CrearParteDeVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\CrearRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\CrearRepuesto.Designer.cs">
+      <DependentUpon>CrearRepuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrador\CrearTipoVehiculo.cs">
       <SubType>Form</SubType>
@@ -171,6 +183,9 @@
     <Compile Include="Vendedor\PuntoVenta.Designer.cs">
       <DependentUpon>PuntoVenta.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Administrador\ActualizarRepuesto.resx">
+      <DependentUpon>ActualizarRepuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrador\ActualizarUsuario.resx">
       <DependentUpon>ActualizarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\CrearParteDeVehiculo.resx">
       <DependentUpon>CrearParteDeVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\CrearRepuesto.resx">
+      <DependentUpon>CrearRepuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\CrearTipoVehiculo.resx">
       <DependentUpon>CrearTipoVehiculo.cs</DependentUpon>
