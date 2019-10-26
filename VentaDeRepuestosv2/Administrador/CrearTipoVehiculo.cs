@@ -60,5 +60,10 @@ namespace VentaDeRepuestosv2.Administrador
                 }
             }
         }
+
+        private void CrearTipoVehiculo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

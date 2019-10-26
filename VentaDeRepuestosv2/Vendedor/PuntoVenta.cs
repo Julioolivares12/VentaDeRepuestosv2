@@ -255,6 +255,10 @@ namespace VentaDeRepuestosv2.Vendedor
             //cliente defaul
             //repuesto defaul
             nrodoc = txtTracking.Text;
+            idTipoDoc = cmbDocumento.ValueMember;
+            tracking = txtTracking.Text;
+            fechaventa = DateTime.Now.ToString("dd/MM/yyyy");
+
         }
     }
 }

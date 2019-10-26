@@ -36,9 +36,10 @@
             // 
             // CrearTipoVehiculo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(570, 258);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(428, 210);
             this.Name = "CrearTipoVehiculo";
+            this.Load += new System.EventHandler(this.CrearTipoVehiculo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
