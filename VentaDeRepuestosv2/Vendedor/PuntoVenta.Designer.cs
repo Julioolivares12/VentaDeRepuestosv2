@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnPagar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnPagarImprimir = new System.Windows.Forms.Button();
@@ -76,36 +77,46 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbDocumento = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.repuestosDataSet = new VentaDeRepuestosv2.repuestosDataSet();
+            this.mETODOSTOMARBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mETODOSTOMARTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.METODOSTOMARTableAdapter();
+            this.mETODOSDARBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mETODOSDARTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.METODOSDARTableAdapter();
+            this.tIPODOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tIPODOCTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.TIPODOCTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repuestosDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mETODOSTOMARBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mETODOSDARBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tIPODOCBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPagar
             // 
-            this.btnPagar.Location = new System.Drawing.Point(882, 623);
-            this.btnPagar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPagar.Enabled = false;
+            this.btnPagar.Location = new System.Drawing.Point(662, 506);
             this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(121, 28);
+            this.btnPagar.Size = new System.Drawing.Size(91, 23);
             this.btnPagar.TabIndex = 74;
             this.btnPagar.Text = "SOLO PAGAR";
             this.btnPagar.UseVisualStyleBackColor = true;
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(1011, 623);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiar.Location = new System.Drawing.Point(758, 506);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(144, 28);
+            this.btnLimpiar.Size = new System.Drawing.Size(108, 23);
             this.btnLimpiar.TabIndex = 73;
             this.btnLimpiar.Text = "LIMPIAR TODO";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // btnPagarImprimir
             // 
-            this.btnPagarImprimir.Location = new System.Drawing.Point(718, 623);
-            this.btnPagarImprimir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPagarImprimir.Enabled = false;
+            this.btnPagarImprimir.Location = new System.Drawing.Point(538, 506);
             this.btnPagarImprimir.Name = "btnPagarImprimir";
-            this.btnPagarImprimir.Size = new System.Drawing.Size(156, 28);
+            this.btnPagarImprimir.Size = new System.Drawing.Size(117, 23);
             this.btnPagarImprimir.TabIndex = 72;
             this.btnPagarImprimir.Text = "PAGAR E IMPRIMIR";
             this.btnPagarImprimir.UseVisualStyleBackColor = true;
@@ -118,11 +129,10 @@
             this.METODO,
             this.VALOR,
             this.QUITAR});
-            this.dgvPagos.Location = new System.Drawing.Point(51, 583);
-            this.dgvPagos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPagos.Location = new System.Drawing.Point(38, 474);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.RowHeadersWidth = 51;
-            this.dgvPagos.Size = new System.Drawing.Size(659, 121);
+            this.dgvPagos.Size = new System.Drawing.Size(494, 98);
             this.dgvPagos.TabIndex = 71;
             // 
             // TIPO
@@ -163,54 +173,51 @@
             // 
             // txtConsolidado
             // 
-            this.txtConsolidado.Location = new System.Drawing.Point(994, 518);
-            this.txtConsolidado.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConsolidado.Enabled = false;
+            this.txtConsolidado.Location = new System.Drawing.Point(746, 421);
             this.txtConsolidado.Name = "txtConsolidado";
-            this.txtConsolidado.Size = new System.Drawing.Size(160, 22);
+            this.txtConsolidado.Size = new System.Drawing.Size(121, 20);
             this.txtConsolidado.TabIndex = 70;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(842, 527);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(632, 428);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 17);
+            this.label12.Size = new System.Drawing.Size(85, 13);
             this.label12.TabIndex = 69;
             this.label12.Text = "CONSOLIDADO";
             // 
             // cmbMetodo2
             // 
-            this.cmbMetodo2.Location = new System.Drawing.Point(479, 537);
-            this.cmbMetodo2.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbMetodo2.Enabled = false;
+            this.cmbMetodo2.Location = new System.Drawing.Point(359, 436);
             this.cmbMetodo2.Name = "cmbMetodo2";
-            this.cmbMetodo2.Size = new System.Drawing.Size(152, 28);
+            this.cmbMetodo2.Size = new System.Drawing.Size(114, 23);
             this.cmbMetodo2.TabIndex = 68;
             this.cmbMetodo2.Text = "DAR VUELTO";
             this.cmbMetodo2.UseVisualStyleBackColor = true;
             // 
             // txtDar
             // 
-            this.txtDar.Location = new System.Drawing.Point(117, 539);
-            this.txtDar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDar.Location = new System.Drawing.Point(88, 438);
             this.txtDar.Name = "txtDar";
-            this.txtDar.Size = new System.Drawing.Size(160, 22);
+            this.txtDar.Size = new System.Drawing.Size(121, 20);
             this.txtDar.TabIndex = 67;
             // 
             // txtTomar
             // 
-            this.txtTomar.Location = new System.Drawing.Point(117, 502);
-            this.txtTomar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTomar.Location = new System.Drawing.Point(88, 408);
             this.txtTomar.Name = "txtTomar";
-            this.txtTomar.Size = new System.Drawing.Size(160, 22);
+            this.txtTomar.Size = new System.Drawing.Size(121, 20);
             this.txtTomar.TabIndex = 66;
             // 
             // cmbMetodo1
             // 
-            this.cmbMetodo1.Location = new System.Drawing.Point(479, 500);
-            this.cmbMetodo1.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbMetodo1.Enabled = false;
+            this.cmbMetodo1.Location = new System.Drawing.Point(359, 406);
             this.cmbMetodo1.Name = "cmbMetodo1";
-            this.cmbMetodo1.Size = new System.Drawing.Size(156, 28);
+            this.cmbMetodo1.Size = new System.Drawing.Size(117, 23);
             this.cmbMetodo1.TabIndex = 65;
             this.cmbMetodo1.Text = "TOMAR PAGO";
             this.cmbMetodo1.UseVisualStyleBackColor = true;
@@ -218,119 +225,117 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(47, 539);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(35, 438);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 17);
+            this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 64;
             this.label11.Text = "DAR";
             // 
             // comboBox3
             // 
+            this.comboBox3.DataSource = this.mETODOSDARBindingSource;
+            this.comboBox3.DisplayMember = "METODO";
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(306, 539);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox3.Location = new System.Drawing.Point(230, 438);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(160, 24);
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 63;
+            this.comboBox3.ValueMember = "ID_METODO";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(47, 506);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(35, 411);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 17);
+            this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 62;
             this.label10.Text = "TOMAR";
             // 
             // comboBox2
             // 
+            this.comboBox2.DataSource = this.mETODOSTOMARBindingSource;
+            this.comboBox2.DisplayMember = "METODO";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(306, 502);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox2.Location = new System.Drawing.Point(230, 408);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(160, 24);
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 61;
+            this.comboBox2.ValueMember = "ID_METODO";
             // 
             // txtSubtotal
             // 
-            this.txtSubtotal.Location = new System.Drawing.Point(994, 409);
-            this.txtSubtotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSubtotal.Enabled = false;
+            this.txtSubtotal.Location = new System.Drawing.Point(746, 332);
             this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(160, 22);
+            this.txtSubtotal.Size = new System.Drawing.Size(121, 20);
             this.txtSubtotal.TabIndex = 60;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(870, 417);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(652, 339);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 17);
+            this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 59;
             this.label9.Text = "SUBTOTAL: $";
             // 
             // txtMontoTotal
             // 
-            this.txtMontoTotal.Location = new System.Drawing.Point(994, 441);
-            this.txtMontoTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMontoTotal.Enabled = false;
+            this.txtMontoTotal.Location = new System.Drawing.Point(746, 358);
             this.txtMontoTotal.Name = "txtMontoTotal";
-            this.txtMontoTotal.Size = new System.Drawing.Size(160, 22);
+            this.txtMontoTotal.Size = new System.Drawing.Size(121, 20);
             this.txtMontoTotal.TabIndex = 58;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(842, 449);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(632, 365);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(126, 17);
+            this.label8.Size = new System.Drawing.Size(97, 13);
             this.label8.TabIndex = 57;
             this.label8.Text = "MONTO TOTAL: $";
             // 
             // txtIva
             // 
-            this.txtIva.Location = new System.Drawing.Point(994, 377);
-            this.txtIva.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIva.Enabled = false;
+            this.txtIva.Location = new System.Drawing.Point(746, 306);
             this.txtIva.Name = "txtIva";
-            this.txtIva.Size = new System.Drawing.Size(160, 22);
+            this.txtIva.Size = new System.Drawing.Size(121, 20);
             this.txtIva.TabIndex = 56;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(923, 385);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(692, 313);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 17);
+            this.label7.Size = new System.Drawing.Size(36, 13);
             this.label7.TabIndex = 55;
             this.label7.Text = "IVA: $";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(51, 377);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox1.Location = new System.Drawing.Point(38, 306);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(657, 117);
+            this.richTextBox1.Size = new System.Drawing.Size(494, 96);
             this.richTextBox1.TabIndex = 54;
             this.richTextBox1.Text = "";
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(823, 132);
-            this.txtDescuento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescuento.Location = new System.Drawing.Point(617, 107);
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(160, 22);
+            this.txtDescuento.Size = new System.Drawing.Size(121, 20);
             this.txtDescuento.TabIndex = 52;
             // 
             // btnClienteNuevo
             // 
             this.btnClienteNuevo.BackgroundImage = global::VentaDeRepuestosv2.Properties.Resources.plus;
-            this.btnClienteNuevo.Location = new System.Drawing.Point(380, 64);
-            this.btnClienteNuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClienteNuevo.Location = new System.Drawing.Point(285, 52);
             this.btnClienteNuevo.Name = "btnClienteNuevo";
-            this.btnClienteNuevo.Size = new System.Drawing.Size(45, 38);
+            this.btnClienteNuevo.Size = new System.Drawing.Size(34, 31);
             this.btnClienteNuevo.TabIndex = 47;
             this.btnClienteNuevo.UseVisualStyleBackColor = true;
             this.btnClienteNuevo.Click += new System.EventHandler(this.BtnClienteNuevo_Click);
@@ -346,11 +351,10 @@
             this.PRECIO_UNITARIO,
             this.PRECIO_TOTAL,
             this.REMOVER});
-            this.dgvItems.Location = new System.Drawing.Point(39, 185);
-            this.dgvItems.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvItems.Location = new System.Drawing.Point(12, 150);
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.RowHeadersWidth = 51;
-            this.dgvItems.Size = new System.Drawing.Size(1116, 185);
+            this.dgvItems.Size = new System.Drawing.Size(880, 150);
             this.dgvItems.TabIndex = 53;
             // 
             // UPC
@@ -413,131 +417,155 @@
             // btnBuscarItem
             // 
             this.btnBuscarItem.BackgroundImage = global::VentaDeRepuestosv2.Properties.Resources.lupa1;
-            this.btnBuscarItem.Location = new System.Drawing.Point(587, 126);
-            this.btnBuscarItem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarItem.Location = new System.Drawing.Point(440, 102);
             this.btnBuscarItem.Name = "btnBuscarItem";
-            this.btnBuscarItem.Size = new System.Drawing.Size(48, 42);
+            this.btnBuscarItem.Size = new System.Drawing.Size(36, 34);
             this.btnBuscarItem.TabIndex = 50;
             this.btnBuscarItem.UseVisualStyleBackColor = true;
             this.btnBuscarItem.Click += new System.EventHandler(this.BtnBuscarItem_Click);
             // 
             // txtItem
             // 
-            this.txtItem.Location = new System.Drawing.Point(206, 137);
-            this.txtItem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtItem.Location = new System.Drawing.Point(154, 111);
             this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(372, 22);
+            this.txtItem.Size = new System.Drawing.Size(280, 20);
             this.txtItem.TabIndex = 49;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 140);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(35, 114);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 17);
+            this.label5.Size = new System.Drawing.Size(113, 13);
             this.label5.TabIndex = 48;
             this.label5.Text = "BUSCAR REPUESTO";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(662, 139);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(496, 113);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 17);
+            this.label6.Size = new System.Drawing.Size(119, 13);
             this.label6.TabIndex = 51;
             this.label6.Text = "DESCUENTO GLOBAL";
             // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.BackgroundImage = global::VentaDeRepuestosv2.Properties.Resources.lupa1;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(327, 64);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(245, 52);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(45, 43);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(34, 35);
             this.btnBuscarCliente.TabIndex = 46;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(823, 26);
-            this.txtFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFecha.Enabled = false;
+            this.txtFecha.Location = new System.Drawing.Point(617, 21);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(160, 22);
+            this.txtFecha.Size = new System.Drawing.Size(121, 20);
             this.txtFecha.TabIndex = 45;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(713, 30);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(535, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 17);
+            this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 44;
             this.label4.Text = "FECHA VENTA";
             // 
             // txtTracking
             // 
-            this.txtTracking.Location = new System.Drawing.Point(499, 26);
-            this.txtTracking.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTracking.Location = new System.Drawing.Point(374, 21);
             this.txtTracking.Name = "txtTracking";
-            this.txtTracking.Size = new System.Drawing.Size(160, 22);
+            this.txtTracking.Size = new System.Drawing.Size(121, 20);
             this.txtTracking.TabIndex = 43;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(389, 30);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(292, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 17);
+            this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 42;
             this.label3.Text = "TRACKING N°";
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(158, 75);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCliente.Location = new System.Drawing.Point(118, 61);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(160, 22);
+            this.txtCliente.Size = new System.Drawing.Size(121, 20);
             this.txtCliente.TabIndex = 41;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 79);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(61, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 40;
             this.label2.Text = "CLIENTE";
             // 
             // cmbDocumento
             // 
+            this.cmbDocumento.DataSource = this.tIPODOCBindingSource;
+            this.cmbDocumento.DisplayMember = "DESCRIPCION";
+            this.cmbDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDocumento.FormattingEnabled = true;
-            this.cmbDocumento.Location = new System.Drawing.Point(158, 26);
-            this.cmbDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbDocumento.Location = new System.Drawing.Point(118, 21);
             this.cmbDocumento.Name = "cmbDocumento";
-            this.cmbDocumento.Size = new System.Drawing.Size(160, 24);
+            this.cmbDocumento.Size = new System.Drawing.Size(121, 21);
             this.cmbDocumento.TabIndex = 38;
+            this.cmbDocumento.ValueMember = "ID_TIPODOC";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(35, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 17);
+            this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 39;
             this.label1.Text = "DOCUMENTO";
             // 
+            // repuestosDataSet
+            // 
+            this.repuestosDataSet.DataSetName = "repuestosDataSet";
+            this.repuestosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mETODOSTOMARBindingSource
+            // 
+            this.mETODOSTOMARBindingSource.DataMember = "METODOSTOMAR";
+            this.mETODOSTOMARBindingSource.DataSource = this.repuestosDataSet;
+            // 
+            // mETODOSTOMARTableAdapter
+            // 
+            this.mETODOSTOMARTableAdapter.ClearBeforeFill = true;
+            // 
+            // mETODOSDARBindingSource
+            // 
+            this.mETODOSDARBindingSource.DataMember = "METODOSDAR";
+            this.mETODOSDARBindingSource.DataSource = this.repuestosDataSet;
+            // 
+            // mETODOSDARTableAdapter
+            // 
+            this.mETODOSDARTableAdapter.ClearBeforeFill = true;
+            // 
+            // tIPODOCBindingSource
+            // 
+            this.tIPODOCBindingSource.DataMember = "TIPODOC";
+            this.tIPODOCBindingSource.DataSource = this.repuestosDataSet;
+            // 
+            // tIPODOCTableAdapter
+            // 
+            this.tIPODOCTableAdapter.ClearBeforeFill = true;
+            // 
             // PuntoVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 730);
+            this.ClientSize = new System.Drawing.Size(896, 593);
             this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnPagarImprimir);
@@ -575,10 +603,16 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbDocumento);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PuntoVenta";
             this.Text = "PuntoVenta";
+            this.Load += new System.EventHandler(this.PuntoVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repuestosDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mETODOSTOMARBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mETODOSDARBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tIPODOCBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -634,5 +668,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbDocumento;
         private System.Windows.Forms.Label label1;
+        private repuestosDataSet repuestosDataSet;
+        private System.Windows.Forms.BindingSource mETODOSTOMARBindingSource;
+        private repuestosDataSetTableAdapters.METODOSTOMARTableAdapter mETODOSTOMARTableAdapter;
+        private System.Windows.Forms.BindingSource mETODOSDARBindingSource;
+        private repuestosDataSetTableAdapters.METODOSDARTableAdapter mETODOSDARTableAdapter;
+        private System.Windows.Forms.BindingSource tIPODOCBindingSource;
+        private repuestosDataSetTableAdapters.TIPODOCTableAdapter tIPODOCTableAdapter;
     }
 }
