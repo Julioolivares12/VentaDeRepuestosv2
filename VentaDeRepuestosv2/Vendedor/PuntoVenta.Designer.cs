@@ -39,14 +39,17 @@
             this.QUITAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtConsolidado = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.cmbMetodo2 = new System.Windows.Forms.Button();
+            this.btnDar = new System.Windows.Forms.Button();
             this.txtDar = new System.Windows.Forms.TextBox();
             this.txtTomar = new System.Windows.Forms.TextBox();
-            this.cmbMetodo1 = new System.Windows.Forms.Button();
+            this.btnTomar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbMetodo2 = new System.Windows.Forms.ComboBox();
+            this.mETODOSDARBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repuestosDataSet = new VentaDeRepuestosv2.repuestosDataSet();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbMetodo1 = new System.Windows.Forms.ComboBox();
+            this.mETODOSTOMARBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtMontoTotal = new System.Windows.Forms.TextBox();
@@ -76,19 +79,16 @@
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbDocumento = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.repuestosDataSet = new VentaDeRepuestosv2.repuestosDataSet();
-            this.mETODOSTOMARBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mETODOSTOMARTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.METODOSTOMARTableAdapter();
-            this.mETODOSDARBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mETODOSDARTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.METODOSDARTableAdapter();
             this.tIPODOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.mETODOSTOMARTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.METODOSTOMARTableAdapter();
+            this.mETODOSDARTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.METODOSDARTableAdapter();
             this.tIPODOCTableAdapter = new VentaDeRepuestosv2.repuestosDataSetTableAdapters.TIPODOCTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mETODOSDARBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repuestosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mETODOSTOMARBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mETODOSDARBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIPODOCBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,15 +188,16 @@
             this.label12.TabIndex = 69;
             this.label12.Text = "CONSOLIDADO";
             // 
-            // cmbMetodo2
+            // btnDar
             // 
-            this.cmbMetodo2.Enabled = false;
-            this.cmbMetodo2.Location = new System.Drawing.Point(359, 436);
-            this.cmbMetodo2.Name = "cmbMetodo2";
-            this.cmbMetodo2.Size = new System.Drawing.Size(114, 23);
-            this.cmbMetodo2.TabIndex = 68;
-            this.cmbMetodo2.Text = "DAR VUELTO";
-            this.cmbMetodo2.UseVisualStyleBackColor = true;
+            this.btnDar.Enabled = false;
+            this.btnDar.Location = new System.Drawing.Point(359, 436);
+            this.btnDar.Name = "btnDar";
+            this.btnDar.Size = new System.Drawing.Size(114, 23);
+            this.btnDar.TabIndex = 68;
+            this.btnDar.Text = "DAR VUELTO";
+            this.btnDar.UseVisualStyleBackColor = true;
+            this.btnDar.Click += new System.EventHandler(this.btnDar_Click);
             // 
             // txtDar
             // 
@@ -212,15 +213,16 @@
             this.txtTomar.Size = new System.Drawing.Size(121, 20);
             this.txtTomar.TabIndex = 66;
             // 
-            // cmbMetodo1
+            // btnTomar
             // 
-            this.cmbMetodo1.Enabled = false;
-            this.cmbMetodo1.Location = new System.Drawing.Point(359, 406);
-            this.cmbMetodo1.Name = "cmbMetodo1";
-            this.cmbMetodo1.Size = new System.Drawing.Size(117, 23);
-            this.cmbMetodo1.TabIndex = 65;
-            this.cmbMetodo1.Text = "TOMAR PAGO";
-            this.cmbMetodo1.UseVisualStyleBackColor = true;
+            this.btnTomar.Enabled = false;
+            this.btnTomar.Location = new System.Drawing.Point(359, 406);
+            this.btnTomar.Name = "btnTomar";
+            this.btnTomar.Size = new System.Drawing.Size(117, 23);
+            this.btnTomar.TabIndex = 65;
+            this.btnTomar.Text = "TOMAR PAGO";
+            this.btnTomar.UseVisualStyleBackColor = true;
+            this.btnTomar.Click += new System.EventHandler(this.btnTomar_Click);
             // 
             // label11
             // 
@@ -231,17 +233,27 @@
             this.label11.TabIndex = 64;
             this.label11.Text = "DAR";
             // 
-            // comboBox3
+            // cmbMetodo2
             // 
-            this.comboBox3.DataSource = this.mETODOSDARBindingSource;
-            this.comboBox3.DisplayMember = "METODO";
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(230, 438);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 63;
-            this.comboBox3.ValueMember = "ID_METODO";
+            this.cmbMetodo2.DataSource = this.mETODOSDARBindingSource;
+            this.cmbMetodo2.DisplayMember = "METODO";
+            this.cmbMetodo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMetodo2.FormattingEnabled = true;
+            this.cmbMetodo2.Location = new System.Drawing.Point(230, 438);
+            this.cmbMetodo2.Name = "cmbMetodo2";
+            this.cmbMetodo2.Size = new System.Drawing.Size(121, 21);
+            this.cmbMetodo2.TabIndex = 63;
+            this.cmbMetodo2.ValueMember = "ID_METODO";
+            // 
+            // mETODOSDARBindingSource
+            // 
+            this.mETODOSDARBindingSource.DataMember = "METODOSDAR";
+            this.mETODOSDARBindingSource.DataSource = this.repuestosDataSet;
+            // 
+            // repuestosDataSet
+            // 
+            this.repuestosDataSet.DataSetName = "repuestosDataSet";
+            this.repuestosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label10
             // 
@@ -252,17 +264,22 @@
             this.label10.TabIndex = 62;
             this.label10.Text = "TOMAR";
             // 
-            // comboBox2
+            // cmbMetodo1
             // 
-            this.comboBox2.DataSource = this.mETODOSTOMARBindingSource;
-            this.comboBox2.DisplayMember = "METODO";
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(230, 408);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 61;
-            this.comboBox2.ValueMember = "ID_METODO";
+            this.cmbMetodo1.DataSource = this.mETODOSTOMARBindingSource;
+            this.cmbMetodo1.DisplayMember = "METODO";
+            this.cmbMetodo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMetodo1.FormattingEnabled = true;
+            this.cmbMetodo1.Location = new System.Drawing.Point(230, 408);
+            this.cmbMetodo1.Name = "cmbMetodo1";
+            this.cmbMetodo1.Size = new System.Drawing.Size(121, 21);
+            this.cmbMetodo1.TabIndex = 61;
+            this.cmbMetodo1.ValueMember = "ID_METODO";
+            // 
+            // mETODOSTOMARBindingSource
+            // 
+            this.mETODOSTOMARBindingSource.DataMember = "METODOSTOMAR";
+            this.mETODOSTOMARBindingSource.DataSource = this.repuestosDataSet;
             // 
             // txtSubtotal
             // 
@@ -430,6 +447,9 @@
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(280, 20);
             this.txtItem.TabIndex = 49;
+            this.txtItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItem_KeyDown);
+            this.txtItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItem_KeyPress);
+            this.txtItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtItem_KeyUp);
             // 
             // label5
             // 
@@ -520,6 +540,11 @@
             this.cmbDocumento.TabIndex = 38;
             this.cmbDocumento.ValueMember = "ID_TIPODOC";
             // 
+            // tIPODOCBindingSource
+            // 
+            this.tIPODOCBindingSource.DataMember = "TIPODOC";
+            this.tIPODOCBindingSource.DataSource = this.repuestosDataSet;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -529,33 +554,13 @@
             this.label1.TabIndex = 39;
             this.label1.Text = "DOCUMENTO";
             // 
-            // repuestosDataSet
-            // 
-            this.repuestosDataSet.DataSetName = "repuestosDataSet";
-            this.repuestosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mETODOSTOMARBindingSource
-            // 
-            this.mETODOSTOMARBindingSource.DataMember = "METODOSTOMAR";
-            this.mETODOSTOMARBindingSource.DataSource = this.repuestosDataSet;
-            // 
             // mETODOSTOMARTableAdapter
             // 
             this.mETODOSTOMARTableAdapter.ClearBeforeFill = true;
             // 
-            // mETODOSDARBindingSource
-            // 
-            this.mETODOSDARBindingSource.DataMember = "METODOSDAR";
-            this.mETODOSDARBindingSource.DataSource = this.repuestosDataSet;
-            // 
             // mETODOSDARTableAdapter
             // 
             this.mETODOSDARTableAdapter.ClearBeforeFill = true;
-            // 
-            // tIPODOCBindingSource
-            // 
-            this.tIPODOCBindingSource.DataMember = "TIPODOC";
-            this.tIPODOCBindingSource.DataSource = this.repuestosDataSet;
             // 
             // tIPODOCTableAdapter
             // 
@@ -572,14 +577,14 @@
             this.Controls.Add(this.dgvPagos);
             this.Controls.Add(this.txtConsolidado);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.cmbMetodo2);
+            this.Controls.Add(this.btnDar);
             this.Controls.Add(this.txtDar);
             this.Controls.Add(this.txtTomar);
-            this.Controls.Add(this.cmbMetodo1);
+            this.Controls.Add(this.btnTomar);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cmbMetodo2);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbMetodo1);
             this.Controls.Add(this.txtSubtotal);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtMontoTotal);
@@ -603,15 +608,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbDocumento);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PuntoVenta";
             this.Text = "PuntoVenta";
             this.Load += new System.EventHandler(this.PuntoVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mETODOSDARBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repuestosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mETODOSTOMARBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mETODOSDARBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIPODOCBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -630,14 +635,14 @@
         private System.Windows.Forms.DataGridViewButtonColumn QUITAR;
         private System.Windows.Forms.TextBox txtConsolidado;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button cmbMetodo2;
+        private System.Windows.Forms.Button btnDar;
         private System.Windows.Forms.TextBox txtDar;
         private System.Windows.Forms.TextBox txtTomar;
-        private System.Windows.Forms.Button cmbMetodo1;
+        private System.Windows.Forms.Button btnTomar;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbMetodo2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbMetodo1;
         private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMontoTotal;

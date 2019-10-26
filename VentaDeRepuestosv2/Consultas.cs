@@ -68,7 +68,7 @@ namespace VentaDeRepuestosv2
                 {
                     cmd.CommandType = commandType;
                     cmd.Parameters.AddRange(parameters);
-                    connection.Open();
+                  //  connection.Open();
                     return cmd.ExecuteNonQuery();
                 }
             }

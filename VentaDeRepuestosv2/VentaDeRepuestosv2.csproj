@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Consultas.cs" />
+    <Compile Include="Consultas2.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +176,7 @@
     <Compile Include="Modelos\Repuesto.cs" />
     <Compile Include="Modelos\TipoVehiculo.cs" />
     <Compile Include="Modelos\Usuario.cs" />
+    <Compile Include="Modelos\Ventas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repuestosDataSet.Designer.cs">
@@ -208,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\CrearUsuario.resx">
       <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\MantenimientoClasesDeVehiculos.resx">
+      <DependentUpon>MantenimientoClasesDeVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\MantenimientoPartesDeVehiculos.resx">
       <DependentUpon>MantenimientoPartesDeVehiculos.cs</DependentUpon>
