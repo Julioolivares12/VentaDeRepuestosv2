@@ -1057,5 +1057,143 @@ namespace VentaDeRepuestosv2
         }
 
 
+        //modulo de busqueda
+        public static List<Repuesto> GetRepuestoByID_Marca(string marcaID)
+        {
+            var query = "SELECT R.ID_REPUESTO, R.NOMBRE," +
+                         "R.DESCRIPCION,R.PRECIOCOMPRA," +
+                         "R.PRECIOVENTA," +
+                         "R.DESCUENTO," +
+                         "R.NUM_MOTOR," +
+                         "R.NUM_CHASIS," +
+                         "R.NUM_VIN," +
+                         "R.UPC," +
+                         "R.CANTIDAD" +
+                          "FROM repuestos AS R INNER JOIN MARCASVEHICULOS AS M ON R.ID_MARCAVEH = M.ID_MARCAVEH" +
+                          $"WHERE ID_MARCAVEH ='{marcaID}'";
+            
+            var repuestos = new List<Repuesto>();
+            using (var con = Conexion.conectar())
+            {
+                using (var cmd = new SqlCommand(query, con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    var reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            var r = new Repuesto();
+                            r.ID = reader["ID_REPUESTO"].ToString();
+                            r.Nombe = reader["NOMBRE"].ToString();
+                            r.Descripcion = reader["DESCRIPCION"].ToString();
+                            r.PrecioCompra = Convert.ToDouble(reader["PRECIOCOMPRA"].ToString());
+                            r.PrecioVenta =Convert.ToDouble( reader["PRECIOVENTA"].ToString());
+                            r.Descuento = Convert.ToDouble(reader["DESCUENTO"].ToString());
+                            r.NumMotor = Convert.ToInt32(reader["NUM_MOTOR"].ToString());
+                            r.NumChasis = Convert.ToInt32(reader["NUM_CHASIS"].ToString());
+                            r.NumVin = Convert.ToInt32(reader["NUM_VIN"].ToString());
+                            r.UPC = reader["UPC"].ToString();
+                            r.Cantidad = Convert.ToInt32(reader["cantidad"].ToString());
+
+                            repuestos.Add(r);
+                        }
+                    }
+
+                }
+            }
+            return repuestos;
+        }
+        public static List<Repuesto> GetRepuestoByID_Parte(string parteID)
+        {
+            var query = "SELECT R.ID_REPUESTO, R.NOMBRE," +
+                         "R.DESCRIPCION,R.PRECIOCOMPRA," +
+                         "R.PRECIOVENTA," +
+                         "R.DESCUENTO," +
+                         "R.NUM_MOTOR," +
+                         "R.NUM_CHASIS," +
+                         "R.NUM_VIN," +
+                         "R.UPC," +
+                         "R.CANTIDAD" +
+                          "FROM repuestos AS R INNER JOIN PARTESVEHICULOS AS P ON R.ID_PARTEVEH = M.ID_PARTEVEH" +
+                          $"WHERE ID_PARTEVEH ='{parteID}'";
+            var repuestos = new List<Repuesto>();
+            using (var con = Conexion.conectar())
+            {
+                using (var cmd = new SqlCommand(query, con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    var reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            var r = new Repuesto();
+                            r.ID = reader["ID_REPUESTO"].ToString();
+                            r.Nombe = reader["NOMBRE"].ToString();
+                            r.Descripcion = reader["DESCRIPCION"].ToString();
+                            r.PrecioCompra = Convert.ToDouble(reader["PRECIOCOMPRA"].ToString());
+                            r.PrecioVenta = Convert.ToDouble(reader["PRECIOVENTA"].ToString());
+                            r.Descuento = Convert.ToDouble(reader["DESCUENTO"].ToString());
+                            r.NumMotor = Convert.ToInt32(reader["NUM_MOTOR"].ToString());
+                            r.NumChasis = Convert.ToInt32(reader["NUM_CHASIS"].ToString());
+                            r.NumVin = Convert.ToInt32(reader["NUM_VIN"].ToString());
+                            r.UPC = reader["UPC"].ToString();
+                            r.Cantidad = Convert.ToInt32(reader["cantidad"].ToString());
+                            repuestos.Add(r);
+                        }
+                    }
+
+                }
+            }
+            return repuestos;
+        }
+
+        public static List<Repuesto> GetRepuestosByID_MARCA_AND_ID_PARTE(string marcda , string parte)
+        {
+            var query = "SELECT R.ID_REPUESTO, R.NOMBRE," +
+                         "R.DESCRIPCION,R.PRECIOCOMPRA," +
+                         "R.PRECIOVENTA," +
+                         "R.DESCUENTO," +
+                         "R.NUM_MOTOR," +
+                         "R.NUM_CHASIS," +
+                         "R.NUM_VIN," +
+                         "R.UPC," +
+                         "R.CANTIDAD" +
+                          "FROM repuestos AS R INNER JOIN PARTESVEHICULOS AS P ON R.ID_PARTEVEH = M.ID_PARTEVEH" +
+                          $"WHERE ID_PARTEVEH ='{parte}' && where ID_MARCAVEH = '{marcda}'";
+            var list = new List<Repuesto>();
+            using (var con = Conexion.conectar())
+            {
+                using (var cmd = new SqlCommand(query,con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    var reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            var r = new Repuesto();
+                            r.ID = reader["ID_REPUESTO"].ToString();
+                            r.Nombe = reader["NOMBRE"].ToString();
+                            r.Descripcion = reader["DESCRIPCION"].ToString();
+                            r.PrecioCompra = Convert.ToDouble(reader["PRECIOCOMPRA"].ToString());
+                            r.PrecioVenta = Convert.ToDouble(reader["PRECIOVENTA"].ToString());
+                            r.Descuento = Convert.ToDouble(reader["DESCUENTO"].ToString());
+                            r.NumMotor = Convert.ToInt32(reader["NUM_MOTOR"].ToString());
+                            r.NumChasis = Convert.ToInt32(reader["NUM_CHASIS"].ToString());
+                            r.NumVin = Convert.ToInt32(reader["NUM_VIN"].ToString());
+                            r.UPC = reader["UPC"].ToString();
+                            r.Cantidad = Convert.ToInt32(reader["cantidad"].ToString());
+
+                            list.Add(r);
+                        }
+                    }
+                }
+            }
+            return list;
+        }
+
     }
+    
 }
