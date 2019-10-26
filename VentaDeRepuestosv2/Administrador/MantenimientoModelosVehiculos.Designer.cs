@@ -28,7 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
+            // 
+            // MantenimientoModelosVehiculos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "MantenimientoModelosVehiculos";
+            this.Load += new System.EventHandler(this.MantenimientoModelosVehiculos_Load);
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

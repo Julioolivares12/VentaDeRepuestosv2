@@ -142,6 +142,22 @@ namespace VentaDeRepuestosv2
             }
 
         }
+        public static bool EliminarUsuario(string id)
+        {
+            using (var con = Conexion.conectar())
+            {
+                using (var cmd = new SqlCommand($"DELETE FROM USUARIOS WHERE ID_USUARIO = '{id}'",con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    var rs = cmd.ExecuteNonQuery();
+                    if (rs > 0)
+                        return true;
+                    else
+                        return false;
+                    
+                }
+            }
+        }
         public static Int32 ActualizarUsuario(Usuario usuario)
         {
             

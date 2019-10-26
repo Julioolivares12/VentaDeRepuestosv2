@@ -1,6 +1,6 @@
 ﻿namespace VentaDeRepuestosv2.Administrador
 {
-    partial class MantenimientoEmpleado
+    partial class CrearClaseDeVehiculo
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,29 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnEliminar
+            // btnCrear
             // 
-            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            this.btnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
-            // btnEditar
-            // 
-            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
-            // 
-            // MantenimientoEmpleado
+            // CrearClaseDeVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "MantenimientoEmpleado";
-            this.Load += new System.EventHandler(this.MantenimientoEmpleado_Load);
-            this.panel1.ResumeLayout(false);
+            this.ClientSize = new System.Drawing.Size(570, 258);
+            this.Name = "CrearClaseDeVehiculo";
+            this.Load += new System.EventHandler(this.CrearClaseDeVehiculo_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

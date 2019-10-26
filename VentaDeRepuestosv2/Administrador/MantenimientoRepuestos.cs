@@ -18,12 +18,18 @@ namespace VentaDeRepuestosv2.Administrador
 
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
-
+            var crear = new CrearRepuesto();
+            crear.ShowDialog();
+            cargarDatos();
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             var i = getID();
+            var actualizar = new ActualizarRepuesto(i);
+            actualizar.ShowDialog();
+            cargarDatos();
+
             
         }
 
