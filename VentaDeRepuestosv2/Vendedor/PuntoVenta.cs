@@ -22,6 +22,16 @@ namespace VentaDeRepuestosv2.Vendedor
         Double consolidado = 0.00;
         Double tomar = 0.00;
         Double dar = 0.00;
+        String id_venta;
+        String tracking;
+        String iduser = "56f0cf9c-e0d0-4390-96f9-b7cc76725809";
+        String idrepuesto = "1";
+        String nrodoc;
+        String idTipoDoc;
+        String fechaventa;
+
+
+
 
 
         public PuntoVenta()
@@ -53,6 +63,7 @@ namespace VentaDeRepuestosv2.Vendedor
             this.mETODOSDARTableAdapter.Fill(this.repuestosDataSet.METODOSDAR);
             // TODO: This line of code loads data into the 'repuestosDataSet.METODOSTOMAR' table. You can move, or remove it, as needed.
             this.mETODOSTOMARTableAdapter.Fill(this.repuestosDataSet.METODOSTOMAR);
+            txtFecha.Text = DateTime.Now.ToString("ddMMyyyy");
 
         }
         private void habilitarVuelto()
@@ -230,6 +241,20 @@ namespace VentaDeRepuestosv2.Vendedor
                 MessageBox.Show("Solo Numeros Porfavor");
 
             }
+        }
+
+        private void txtCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void btnPagarImprimir_Click(object sender, EventArgs e)
+        {
+            id_venta = DateTime.Now.ToString("ddMMyyyy")+txtTracking.Text;
+            //user defaul
+            //cliente defaul
+            //repuesto defaul
+            nrodoc = txtTracking.Text;
         }
     }
 }

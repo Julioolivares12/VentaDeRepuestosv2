@@ -120,6 +120,7 @@
             this.btnPagarImprimir.TabIndex = 72;
             this.btnPagarImprimir.Text = "PAGAR E IMPRIMIR";
             this.btnPagarImprimir.UseVisualStyleBackColor = true;
+            this.btnPagarImprimir.Click += new System.EventHandler(this.btnPagarImprimir_Click);
             // 
             // dgvPagos
             // 
@@ -518,6 +519,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(121, 20);
             this.txtCliente.TabIndex = 41;
+            this.txtCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCliente_KeyPress);
             // 
             // label2
             // 
