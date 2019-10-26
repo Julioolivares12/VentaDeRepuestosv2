@@ -104,7 +104,8 @@ namespace VentaDeRepuestosv2.Vendedor
 
                 if (txtItem.Text != algo)
                 {
-                    //MessageBox.Show("Articulo no encontrado o no registrado", "Sin Resultados");
+                  //  MessageBox.Show("Articulo no encontrado o no registrado", "Sin Resultados");
+                   
                     fila.CreateCells(dgvItems);
                     fila.Cells[0].Value = "10000002555";
                     fila.Cells[1].Value = "Repuesto de Prueba";
@@ -120,6 +121,7 @@ namespace VentaDeRepuestosv2.Vendedor
                     habilitarTomar();
                     dgvItems.Rows.Add(fila);
                     txtItem.Text = "";
+                    
                 }
                 else
                 {

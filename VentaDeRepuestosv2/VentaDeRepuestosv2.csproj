@@ -133,6 +133,7 @@
     </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Consultas.cs" />
+    <Compile Include="Consultas2.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
