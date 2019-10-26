@@ -61,6 +61,7 @@
             this.puntoDeVentaToolStripMenuItem.Name = "puntoDeVentaToolStripMenuItem";
             this.puntoDeVentaToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.puntoDeVentaToolStripMenuItem.Text = "punto de venta";
+            this.puntoDeVentaToolStripMenuItem.Click += new System.EventHandler(this.PuntoDeVentaToolStripMenuItem_Click);
             // 
             // mantenimientosToolStripMenuItem
             // 

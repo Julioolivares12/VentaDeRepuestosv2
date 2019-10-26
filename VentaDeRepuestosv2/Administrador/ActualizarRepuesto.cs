@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using VentaDeRepuestosv2.Modelos;
 
 namespace VentaDeRepuestosv2.Administrador
 {
@@ -22,6 +23,7 @@ namespace VentaDeRepuestosv2.Administrador
             if(!String.IsNullOrEmpty(id) && !String.IsNullOrWhiteSpace(id))
             {
                 var mod = Consultas.GetRepuestoByID(id);
+                
                 txtDescripcion.Text = mod.Descripcion;
                 txtDescuento.Text = mod.Descuento.ToString();
                 txtNumChasis.Text = mod.NumChasis.ToString();
@@ -30,6 +32,10 @@ namespace VentaDeRepuestosv2.Administrador
                 txtPrecioCompra.Text = mod.PrecioCompra.ToString();
                 txtPrecioVenta.Text = mod.PrecioVenta.ToString();
                 txtRepuesto.Text = mod.Nombe;
+                txtParteActual.Text = mod.ID_PARTEVEH;
+                txtMarcaActual.Text = mod.ID_MARCAVEH;
+
+
             }
         }
 
@@ -41,6 +47,7 @@ namespace VentaDeRepuestosv2.Administrador
 
         private void BtnCrear_Click(object sender, EventArgs e)
         {
+            var mod =new Repuesto();
 
         }
 

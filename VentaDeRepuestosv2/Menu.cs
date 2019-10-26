@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VentaDeRepuestosv2.Administrador;
+using VentaDeRepuestosv2.Vendedor;
 
 namespace VentaDeRepuestosv2
 {
@@ -19,6 +20,7 @@ namespace VentaDeRepuestosv2
              MantenimientoTiposVehiculos tiposVehiculos;
         MantenimientoPartesDeVehiculos partesDeVehiculos;
         MantenimientoClasesDeVehiculos clacesDeVehiculos;
+        PuntoVenta puntoVenta;
 
 
 
@@ -223,6 +225,22 @@ namespace VentaDeRepuestosv2
             this.Close();
             Form1 form = new Form1();
             form.Show();
+        }
+
+        private void PuntoDeVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(puntoVenta== null)
+            {
+                puntoVenta = new PuntoVenta();
+                puntoVenta.MdiParent = this;
+                puntoVenta.FormClosed += new FormClosedEventHandler(cerrarPuntoVenta);
+                puntoVenta.Show();
+            }
+        }
+
+        private void cerrarPuntoVenta(object sender, FormClosedEventArgs e)
+        {
+            puntoVenta = null;
         }
     }
 }
