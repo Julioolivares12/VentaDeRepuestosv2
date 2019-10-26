@@ -99,7 +99,7 @@ namespace VentaDeRepuestosv2.Vendedor
             DataGridViewRow fila = new DataGridViewRow();
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                consultaItem = Consultas2.GetRepuestoByUPC(txtItem.Text);
+                consultaItem = Consultas.GetRepuestoByUPC(txtItem.Text);
                 string algo = consultaItem.UPC;
 
                 if (txtItem.Text != algo)

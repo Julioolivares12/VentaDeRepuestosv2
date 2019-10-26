@@ -234,7 +234,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\MantenimientoModelosVehiculos.resx">
       <DependentUpon>MantenimientoModelosVehiculos.cs</DependentUpon>
-
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrador\MantenimientoClientes.resx">
       <DependentUpon>MantenimientoClientes.cs</DependentUpon>
 
